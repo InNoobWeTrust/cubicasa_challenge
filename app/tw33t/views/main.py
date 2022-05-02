@@ -8,7 +8,6 @@ import json, requests, datetime, sys, os, uuid, re, time
 
 @app.route("/", methods=['GET'])
 def index():
-
     return render_template('index.html')
 
 

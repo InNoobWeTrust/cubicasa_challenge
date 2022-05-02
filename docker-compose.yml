@@ -12,6 +12,7 @@ services:
       - FLASK_APP=application.py
       - FLASK_DEBUG=1
       - 'RUN=flask run --port 8000 --host 0.0.0.0'
-    command: flask run --port 8000 --host 0.0.0.0
+    command: |
+      flask run --port 8000 --host 0.0.0.0
     # Infinite loop, to keep it alive, for debugging
     # command: bash -c "while true; do echo 'sleeping...' && sleep 10; done"

@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "cubicasa_challenge"
+version = "0.1.0"
+description = ""
+authors = ["InNoobWeTrust <vu.truong.16193@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cffi = "^1.15.0"
+Flask = "^2.1.2"
+itsdangerous = "^2.1.2"
+Jinja2 = "^3.1.2"
+MarkupSafe = "^2.1.1"
+Werkzeug = "^2.1.2"
+twitter = "^1.19.3"
+PyJWT = "^2.3.0"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+jedi-language-server = "^0.36.0"
+mypy = "^0.950"
+black = "^22.3.0"
+isort = "^5.10.1"
+ipython = "^8.3.0"
+pyright = "^1.1.243"
+pytest = "^7.1.2"
+pylint = "^2.13.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
