@@ -1,8 +1,14 @@
+import TwtCardComponent from './twt-card-component.js';
+
 export default {
   data() {
     return {
       message: 'Hello Vue!'
     }
   },
-  template: `<h1>{{ message }}</h1>`
+  components: { TwtCardComponent },
+  template: `
+  <h1>{{ message }}</h1>
+  <TwtCardComponent />
+  `
 }

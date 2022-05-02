@@ -4,6 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["InNoobWeTrust <vu.truong.16193@gmail.com>"]
 
+[tool.poe.tasks]
+serve = { shell = "FLASK_APP=app/application.py FLASK_DEBUG=1 flask run --port 8000 --host 0.0.0.0" }
+
 [tool.poetry.dependencies]
 python = "^3.8"
 cffi = "^1.15.0"
@@ -25,6 +28,7 @@ ipython = "^8.3.0"
 pyright = "^1.1.243"
 pytest = "^7.1.2"
 pylint = "^2.13.7"
+poethepoet = "^0.13.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
     <title>Tw333t</title>
-    <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.4/dist/es-module-shims.js"></script>
+    <script
+      async
+      src="https://ga.jspm.io/npm:es-module-shims@1.5.4/dist/es-module-shims.js"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
     <script type="importmap">
       {
         "imports": {
@@ -14,19 +22,17 @@
     </script>
   </head>
   <body>
-
-  <!--
+    <!--
 
     Build a Vue component that gets 3 latest tweets with a user inputted Twitter handle through the "Get tweets" -route.
 
   -->
-  <div id="app"></div>
-
+    <div id="app"></div>
   </body>
   <script type="module">
-    import { createApp } from 'vue';
+    import { createApp } from "vue";
     import HomeComponent from '{{ url_for("static", filename="home-component.js") }}';
 
-    createApp(HomeComponent).mount('#app');
+    createApp(HomeComponent).mount("#app");
   </script>
 </html>

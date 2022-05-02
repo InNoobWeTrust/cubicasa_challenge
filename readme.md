@@ -18,6 +18,9 @@ Your task is to build a simple Flask + Vue app that communicates with Twitter AP
 - User can input a Twitter handle and get three latest tweets from that user
 - Pay attention to the UI and UX
 
+UI choices:
+- Use official design from Twitter from the embedded code extracted from [https://publish.twitter.com](https://publish.twitter.com)
+
 ### Back-end
 - Serve the client with the app
 - Provide a "Get tweets" route
