@@ -6,6 +6,7 @@ authors = ["InNoobWeTrust <vu.truong.16193@gmail.com>"]
 
 [tool.poe.tasks]
 serve = { shell = "FLASK_APP=app/application.py FLASK_DEBUG=1 flask run --port 8000 --host 0.0.0.0" }
+test = { shell = "pytest -s -v" }
 
 [tool.poetry.dependencies]
 python = "^3.8"

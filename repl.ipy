@@ -1,0 +1,50 @@
+# coding: utf-8
+import requests
+headers = {"Authorization": "Authorization: Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA"}
+requests.post?
+apis = {
+token: "https://api.twitter.com/1.1/guest/activate.json",
+timeline: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={0}&count={1}&x-guest-token={2}",
+}
+apis = {
+"token": "https://api.twitter.com/1.1/guest/activate.json",
+"timeline": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={0}&count={1}&x-guest-token={2}",
+}
+apis.timeline
+apis['timeline']
+apis['timeline'].format("Gizmodo", 3, "1521476255354347520")
+requests.post(apis['token'], headers=headers)
+requests.post(apis['token'], headers=headers).status_code
+requests.post(apis['token'], headers=headers).json
+requests.post(apis['token'], headers=headers).json()
+headers
+headers = {"Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA"}
+requests.post(apis['token'], headers=headers).json()
+requests.post(apis['token'], headers=headers).json()['guest_token']
+def get_token():
+    return requests.post(apis['token'], headers=headers).json()['guest_token']
+    
+get_token()
+apis = {
+"token": ("https://api.twitter.com/1.1/guest/activate.json",),
+"timeline": ("https://api.twitter.com/1.1/statuses/user_timeline.json", ('screen_name', 'count', 'x-guest-token',),),
+}
+def get_token():
+    return requests.post(apis['token'].0, headers=headers).json()['guest_token']
+def get_token():
+    return requests.post(apis['token'][0], headers=headers).json()['guest_token']
+    
+get_token()
+from typing import List, Dict
+def get_tweets(screen_name: str) -> List[str]:
+    param_values = (screen_name, 3, get_token())
+    params = dict(zip(apis['timeline'][1], param_values))
+    return requests.get(apis['timeline'][0], params=params).json()
+    
+get_tweets('Gizmodo')
+def get_tweets(screen_name: str) -> List[str]:
+    param_values = (screen_name, 3, get_token())
+    params = dict(zip(apis['timeline'][1], param_values))
+    return requests.get(apis['timeline'][0], params=params, headers=headers).json()
+    
+get_tweets('Gizmodo')

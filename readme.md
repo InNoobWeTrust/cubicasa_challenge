@@ -20,6 +20,7 @@ Your task is to build a simple Flask + Vue app that communicates with Twitter AP
 
 UI choices:
 - Use official design from Twitter from the embedded code extracted from [https://publish.twitter.com](https://publish.twitter.com)
+- For Firefox, should disable tracking protection in order to load twitter widget scripts
 
 ### Back-end
 - Serve the client with the app
