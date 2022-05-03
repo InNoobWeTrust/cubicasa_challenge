@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     async getTweets(screen_name) {
-      const tweets = await fetch(`/api/${screen_name}/tweets`).then(res => res.json());
+      const tweets = await fetch(`${location.protocol}//${location.host}/api/${screen_name}/tweets`).then(res => res.json());
       return tweets;
     }
   },

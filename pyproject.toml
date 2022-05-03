@@ -19,6 +19,7 @@ Werkzeug = "^2.1.2"
 twitter = "^1.19.3"
 PyJWT = "^2.3.0"
 requests = "^2.27.1"
+flask-talisman = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 jedi-language-server = "^0.36.0"
