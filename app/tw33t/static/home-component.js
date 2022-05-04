@@ -40,6 +40,9 @@ export default {
       }
     },
   },
+  async mounted() {
+    await this.onSearch('CasaCubi');
+  },
   unmounted() {
     // Ensure cleanup on destruction
     document.head.removeChild(this.script);
