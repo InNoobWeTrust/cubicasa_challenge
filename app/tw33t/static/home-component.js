@@ -1,4 +1,5 @@
 import TwtCardComponent from './twt-card-component.js';
+import SearchComponent from './search-component.js';
 
 export default {
   data() {
@@ -28,9 +29,10 @@ export default {
     document.head.removeChild(this.script);
     this.script = null;
   },
-  components: { TwtCardComponent },
+  components: { SearchComponent, TwtCardComponent },
   template: `
   <h1>{{ message }}</h1>
+  <SearchComponent />
   <TwtCardComponent v-for="tweet in tweets" :tweet="tweet" />
   `
 }
