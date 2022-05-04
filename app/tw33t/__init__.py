@@ -9,7 +9,7 @@ application = app
 
 # SSLify if hosted by Heroku
 if 'DYNO' in os.environ:
-    Talisman(app)
+    Talisman(app, content_security_policy=None)
 
 # Setup the app with the config.py file
 app.config.from_object('config')

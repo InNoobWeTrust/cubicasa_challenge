@@ -11,9 +11,10 @@ APIS: Dict[str, Tuple] = {
     TIMELINE_API_KEY: (
         "https://api.twitter.com/1.1/statuses/user_timeline.json",
         (
-            "screen_name",
-            "count",
             "x-guest-token",
+            "screen_name",
+            # "count",
+            "exclude_replies",
         ),
     ),
 }

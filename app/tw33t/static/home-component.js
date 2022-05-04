@@ -15,7 +15,7 @@ export default {
     }
   },
   async mounted() {
-    this.tweets = await this.getTweets('elonmusk');
+    this.tweets = await this.getTweets('CasaCubi');
     // Little hack, must load twitter widget script after content is loaded
     this.script = document.createElement('script')
     this.script.async = true;
