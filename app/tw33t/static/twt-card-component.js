@@ -9,10 +9,10 @@ const template = `
     >{{ formatDate(tweet.created_at) }}</a
   >
 </blockquote>
-`
+`;
 
 export default {
-  props: ['tweet'],
+  props: ["tweet"],
   data() {
     return {
       created_at: "Tue May 03 13:04:04 +0000 2022",
@@ -22,14 +22,14 @@ export default {
         name: "Gizmodo",
         screen_name: "Gizmodo",
       },
-    }
+    };
   },
   methods: {
     formatDate(dateStr) {
       const d = new Date(dateStr);
-      const dateItems = d.toDateString().split(' ').slice(1);
-      dateItems[1] = Number(dateItems[1]) + ',';
-      return dateItems.join(' ');
+      const dateItems = d.toDateString().split(" ").slice(1);
+      dateItems[1] = Number(dateItems[1]) + ",";
+      return dateItems.join(" ");
     },
   },
   template,

@@ -22,7 +22,13 @@ Introduce a "Get tweets" route for the client and log relevant info from each se
 @app.route('/api/<screen_name>/tweets/', methods=['GET'])
 @app.route('/api/<screen_name>/tweets/<count>', methods=['GET'])
 def tweet_api(screen_name: str, count: int = 3):
-    response = jsonify(get_tweets(screen_name, count))
+    tweets = []
+    try:
+        tweets = get_tweets(screen_name, count)
+    except:
+        pass
+
+    response = jsonify(tweets)
     response.status_code = 200
     print(list(response.headers.items()))
     return response

@@ -1,28 +1,44 @@
-import TwtCardComponent from './twt-card-component.js';
-import SearchComponent from './search-component.js';
+import TwtCardComponent from "./twt-card-component.js";
+import SearchComponent from "./search-component.js";
 
 export default {
   data() {
     return {
-      message: 'Geting 3 latest tweets from some dude!',
+      message: "Geting 3 latest tweets from some user!",
       tweets: [],
       script: null,
-    }
+    };
   },
   methods: {
     async getTweets(screen_name) {
-      const tweets = await fetch(`${location.protocol}//${location.host}/api/${screen_name}/tweets/`).then(res => res.json());
-      return tweets;
-    }
-  },
-  async mounted() {
-    this.tweets = await this.getTweets('CasaCubi');
+      return await fetch(
+        `${location.protocol}//${location.host}/api/${screen_name}/tweets/`
+      ).then((res) => res.json());
+    },
     // Little hack, must load twitter widget script after content is loaded
-    this.script = document.createElement('script')
-    this.script.async = true;
-    this.script.src = '/static/widgets.js';
-    this.script.charset = 'utf-8';
-    document.head.appendChild(this.script);
+    renderWidget() {
+      if (this.script) {
+        document.head.removeChild(this.script);
+        // Remove rendered twitter cards
+        document
+          .querySelectorAll(".twitter-tweet.twitter-tweet-rendered")
+          .forEach((el) => el.parentElement.removeChild(el));
+      }
+      this.script = document.createElement("script");
+      this.script.async = true;
+      this.script.src = "/static/widgets.js";
+      this.script.charset = "utf-8";
+      document.head.appendChild(this.script);
+    },
+    async onSearch(screen_name) {
+      try {
+        const tweets = await this.getTweets(screen_name);
+        this.tweets = tweets;
+        this.renderWidget();
+      } catch {
+        console.debug("Not found");
+      }
+    },
   },
   unmounted() {
     // Ensure cleanup on destruction
@@ -32,7 +48,7 @@ export default {
   components: { SearchComponent, TwtCardComponent },
   template: `
   <h1>{{ message }}</h1>
-  <SearchComponent />
-  <TwtCardComponent v-for="tweet in tweets" :tweet="tweet" />
-  `
-}
+  <SearchComponent @search="onSearch"/>
+  <TwtCardComponent v-for="tweet in tweets" :key="tweet.id_str" :tweet="tweet" />
+  `,
+};
