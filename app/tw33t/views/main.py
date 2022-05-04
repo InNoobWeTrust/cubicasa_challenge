@@ -9,8 +9,19 @@ import uuid
 from functools import wraps
 
 import requests
-from flask import (Blueprint, Markup, Response, abort, g, jsonify,
-                   make_response, redirect, render_template, request, url_for)
+from flask import (
+    Blueprint,
+    Markup,
+    Response,
+    abort,
+    g,
+    jsonify,
+    make_response,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
 from tw33t import app
 from tw33t.twt_api.tweet import get_tweets
 from twitter import *

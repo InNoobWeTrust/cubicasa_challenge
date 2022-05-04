@@ -16,4 +16,3 @@ def test_get_tweets():
     for screen_name in kols:
         tweets = get_tweets(screen_name)
         assert len(tweets) == 3
-
