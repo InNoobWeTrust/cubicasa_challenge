@@ -1,4 +1,5 @@
 
+import logging
 import os
 from flask import Flask
 from flask_talisman import Talisman
@@ -13,5 +14,7 @@ if 'DYNO' in os.environ:
 
 # Setup the app with the config.py file
 app.config.from_object('config')
+
+app.logger.addHandler(logging.FileHandler('debug.log'))
 
 from tw33t.views import main
